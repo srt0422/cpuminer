@@ -19,4 +19,6 @@ RUN             cd cpuminer && \
                 make
 
 WORKDIR         /cpuminer
-ENTRYPOINT      ["./minerd"]
+
+# ENTRYPOINT      ["./minerd"]
+ENTRYPOINT [ "/bin/sh", "-c", "./minerd \"$@\"", "--"]
